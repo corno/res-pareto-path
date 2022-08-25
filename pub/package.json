@@ -1,0 +1,17 @@
+{
+  "name": "res-pareto-path",
+  "version": "0.1.0",
+  "description": "parses a path string into a structure",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Corno",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.7.13",
+    "api-pareto-path": "^0.1.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "content-fingerprint": "6cf6064ea1ed6bc46edf046e6d6e677cc9500fd6"
+}
