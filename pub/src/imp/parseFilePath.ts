@@ -12,7 +12,7 @@ export const parseFilePath: api.ParseFilePath = ($) => {
             if (dirname === ".") {
                 return []
             } else {
-                return dirname.split($.pathSeparator)
+                return dirname.split(path.posix.sep)
             }
         })(),
         baseName: path.basename(normalizedFilePath, extWithLeadingDot),

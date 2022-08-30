@@ -8,10 +8,10 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.7.14",
-    "api-pareto-path": "^0.1.1"
+    "api-pareto-path": "^0.3.0"
   },
   "files": [
     "dist"
   ],
-  "content-fingerprint": "98e07c107bc828a5eda8a29a8bfe71e0d18257ff"
+  "content-fingerprint": "0e83df58c7590f824cd0ba34015f97a6e3526b6b"
 }
