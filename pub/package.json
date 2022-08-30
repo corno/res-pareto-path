@@ -7,11 +7,11 @@
   "author": "Corno",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^18.7.13",
-    "api-pareto-path": "^0.1.0"
+    "@types/node": "^18.7.14",
+    "api-pareto-path": "^0.1.1"
   },
   "files": [
     "dist"
   ],
-  "content-fingerprint": "ce1a43dce662144e30d2666b2bccd0fd5e1bcdc5"
+  "content-fingerprint": "98e07c107bc828a5eda8a29a8bfe71e0d18257ff"
 }
