@@ -1,92 +1,56 @@
 #!/usr/bin/env node
 
 import * as pe from "pareto-core-exe"
+import * as pa from "pareto-core-async"
+import * as pw from "pareto-core-raw"
+import * as pm from "pareto-core-state"
 import * as pl from "pareto-core-lib"
+
+import * as test from "lib-pareto-test"
+
+import * as diff from "res-pareto-diff"
+import * as fs from "res-pareto-filesystem"
 
 import * as pub from "../../../pub"
 
-pl.logDebugMessage("REENABLE TESTS")
+pe.runProgram(
+    test.createTester(
+        {
+            getTestSet: () => {
 
+                const builder = pm.createDictionaryBuilder<test.TTestElement>(
+                    ["ignore", {}],
+                    () => {
+                        pl.panic("duplicate key")
+                    }
+                )
+                function createTest(name: string, actual: string, expected: string) {
+                    builder.add(name, {
+                        type: ["test", {
+                            type: ["simple string", {
+                                actual: actual,
+                                expected: expected
+                            }]
+                        }]
+                    })
+                }
 
-pl.logDebugMessage(pub.basename("../foo/.."))
-pl.logDebugMessage(pub.dirname("../foo/bar/.."))
-pl.logDebugMessage(pub.dirname("../foo/bar/x"))
-
-// pt.runTests(
-//     {
-//         callback: ($i) => {
-
-//             $i.subset(
-//                 "path tests",
-//                 ($i) => {
-
-//                     function test(
-//                         pathString: string,
-//                         expectedError: string | null,
-//                         expectedPathPattern: string,
-//                         expectedPath: string,
-//                     ) {
-//                         $i.subset(
-//                             pathString,
-//                             ($i) => {
-//                                 const res = ap.analysePath(
-//                                     _testProject,
-//                                     ap.parseFilePath(pathString)
-//                                 )
-//                                 if (expectedError === null) {
-//                                     $i.assert({
-//                                         testName: "expect no error",
-//                                         condition: res.error === null,
-//                                     })
-//                                 } else {
-//                                     if (res.error === null) {
-//                                         $i.assert({
-//                                             testName: "expect an error",
-//                                             condition: false,
-//                                         })
-//                                     } else {
-//                                         $i.testString({
-//                                             testName: "error",
-//                                             expected: expectedError,
-//                                             actual: res.error,
-//                                         })
-//                                     }
-//                                 }
-//                                 $i.testString({
-//                                     testName: "path",
-//                                     expected: expectedPath,
-//                                     actual: `/${res.path.join("/")}`,
-//                                 })
-//                                 $i.testString({
-//                                     testName: "path pattern",
-//                                     expected: expectedPathPattern,
-//                                     actual: res.pathPattern,
-//                                 })
-//                             },
-//                         )
-//                     }
-
-//                     test("f.txt", null, "/f.txt", "/f.txt")
-//                     test("f.txt/x.txt", "expected file instead of directory", "/f.txt", "/")
-//                     test("foo", "unexpected file: 'foo'", "", "/foo")
-//                     test("foo/bar", "unexpected directory: 'foo'", "", "/")
-//                     test("ddd", "expected directory instead of file", "/ddd", "/ddd")
-//                     test("ddd/f.txt", "expected directory (any name)", "/ddd/*", "/ddd/f.txt")
-//                     test("ddd/x/f.txt", null, "/ddd/*/f.txt", "/ddd/x/f.txt")
-//                     test("ddd/x/y.txt", "unexpected file: 'y.txt'", "/ddd/*", "/ddd/x/y.txt")
-//                     test("td/f.txt", null, "/td/f.txt", "/td/f.txt")
-//                     test("td/y.txt", "unexpected file: 'y.txt'", "/td", "/td/y.txt")
-//                     test("fdd/y.txt", null, "/fdd/**/*.txt", "/fdd/y.txt")
-//                     test("fdd/a/y.txt", null, "/fdd/**/*.txt", "/fdd/a/y.txt")
-//                     test("fdd/y.foo", "unexpected extension: 'foo'", "/fdd/**/*.foo", "/fdd/y.foo")
-//                     test("fddnr/a/y.txt", "did not expect a directory", "/fddnr/*[txt]", "/fddnr")
-//                 },
-//             )
-//         },
-//         log: ($) => {
-//             const out = pr.createStdOut()
-//             out.write($)
-//             out.write("\n")
-//         },
-//     }
-// )
+                createTest("basename", pub.basename("../foo/.."), "..")
+                createTest("dirname 1", pub.dirname("../foo/bar/.."), "../foo/bar")
+                createTest("dirname 2", pub.dirname("../foo/bar/x"), "../foo/bar")
+                return pa.value({
+                    elements: builder.getDictionary()
+                })
+            },
+            diff: {
+                diffData: diff.diffData,
+                stringsAreEqual: diff.stringsAreEqual,
+            },
+            fs: {
+                readFile: fs.readFile,
+                writeFile: fs.writeFile,
+                unlink: fs.unlink,
+            },
+        },
+    )
+)
