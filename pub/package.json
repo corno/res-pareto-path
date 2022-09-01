@@ -1,6 +1,6 @@
 {
   "name": "res-pareto-path",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "parses a path string into a structure",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
