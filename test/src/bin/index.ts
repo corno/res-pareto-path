@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 
-import * as pr from "pareto-core-exe"
+import * as pe from "pareto-core-exe"
 import * as pl from "pareto-core-lib"
 
-import * as ap from "../../../pub"
+import * as pub from "../../../pub"
 
 pl.logDebugMessage("REENABLE TESTS")
+
+
+pl.logDebugMessage(pub.basename("../foo/.."))
+pl.logDebugMessage(pub.dirname("../foo/bar/.."))
+pl.logDebugMessage(pub.dirname("../foo/bar/x"))
 
 // pt.runTests(
 //     {

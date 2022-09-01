@@ -1,3 +1,5 @@
+import * as pi from "pareto-core-internals"
+
 import * as api from "api-pareto-path"
 
 import * as path from "path"
@@ -10,9 +12,9 @@ export const parseFilePath: api.ParseFilePath = ($) => {
         directoryPath: (() => {
             const dirname = path.dirname(normalizedFilePath)
             if (dirname === ".") {
-                return []
+                return pi.wrapRawArray([])
             } else {
-                return dirname.split(path.posix.sep)
+                return pi.wrapRawArray(dirname.split(path.posix.sep))
             }
         })(),
         baseName: path.basename(normalizedFilePath, extWithLeadingDot),
