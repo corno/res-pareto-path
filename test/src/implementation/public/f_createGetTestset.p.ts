@@ -14,7 +14,7 @@ export const f_createGetTestset: api.FCreateGetTestset = ($d) => {
     return () => {
 
         const builder = pm.createDictionaryBuilder<test.TTestElement>(
-            ["ignore", null],
+            ["ignore", {}],
             () => {
                 pl.panic("duplicate key")
             }
@@ -30,9 +30,9 @@ export const f_createGetTestset: api.FCreateGetTestset = ($d) => {
             })
         }
 
-        createTest("basename", pub.basename("../foo/.."), "..")
-        createTest("dirname 1", pub.dirname("../foo/bar/.."), "../foo/bar")
-        createTest("dirname 2", pub.dirname("../foo/bar/x"), "../foo/bar")
+        createTest("basename", pub.f_basename("../foo/.."), "..")
+        createTest("dirname 1", pub.f_dirname("../foo/bar/.."), "../foo/bar")
+        createTest("dirname 2", pub.f_dirname("../foo/bar/x"), "../foo/bar")
         return pa.value({
             elements: builder.getDictionary()
         })
