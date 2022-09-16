@@ -12,7 +12,7 @@ import { panic } from "../private/panic"
 import { wrapRawArray } from "../private/wrapRawArray"
 
 
-export const parseFilePath: api.FParseFilePath = ($) => {
+export const f_parseFilePath: api.FParseFilePath = ($) => {
     const normalizedFilePath = normalize($.filePath)
     const extWithLeadingDot = extname(normalizedFilePath)
     return {
