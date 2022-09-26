@@ -8,13 +8,13 @@
   "license": "ISC",
   "dependencies": {
     "api-pareto-path": "^0.7.0",
-    "pareto-core-internals": "^0.7.0"
+    "pareto-core-internals": "^0.8.0"
   },
   "files": [
     "dist"
   ],
   "devDependencies": {
-    "@types/node": "^18.7.18"
+    "@types/node": "^18.7.23"
   },
-  "content-fingerprint": "756a424f959f0c0c2eda1365c029e4138c05cc88"
+  "content-fingerprint": "331ac217c9169c4c99926caecec00c60e464b312"
 }
