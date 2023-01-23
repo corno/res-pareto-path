@@ -1,18 +1,19 @@
 //import * as pi from "pareto-core-internals"
 
-import * as api from "api-pareto-path"
-import { basenameImp } from "../private/basenameImp.p"
-import { dirnameImp } from "../private/dirnameImp.p"
-import { extname } from "../private/extname.p"
-import { getPosixSeparator } from "../private/getPosixSeparator.p"
-import { normalize } from "../private/normalize.p"
+import * as api from "../api"
+
+import { basenameImp } from "../native/basenameImp.p"
+import { dirnameImp } from "../native/dirnameImp.p"
+import { extname } from "../native/extname.p"
+import { getPosixSeparator } from "../native/getPosixSeparator.p"
+import { normalize } from "../native/normalize.p"
 
 //import * as path from "path"
-import { panic } from "../private/panic.p"
-import { wrapRawArray } from "../private/wrapRawArray.p"
+import { panic } from "../native/panic.p"
+import { wrapRawArray } from "../native/wrapRawArray.p"
 
 
-export const f_parseFilePath: api.FParseFilePath = ($) => {
+export const $$: api.CparseFilePath = ($) => {
     const normalizedFilePath = normalize($.filePath)
     const extWithLeadingDot = extname(normalizedFilePath)
     return {
