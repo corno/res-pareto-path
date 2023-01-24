@@ -2,15 +2,15 @@
 
 import * as api from "../api"
 
-import { basenameImp } from "../native/basenameImp.p"
-import { dirnameImp } from "../native/dirnameImp.p"
-import { extname } from "../native/extname.p"
-import { getPosixSeparator } from "../native/getPosixSeparator.p"
-import { normalize } from "../native/normalize.p"
+import { basenameImp } from "../native/basenameImp.native"
+import { dirnameImp } from "../native/dirnameImp.native"
+import { extname } from "../native/extname.native"
+import { getPosixSeparator } from "../native/getPosixSeparator.native"
+import { normalize } from "../native/normalize.native"
 
 //import * as path from "path"
-import { panic } from "../native/panic.p"
-import { wrapRawArray } from "../native/wrapRawArray.p"
+import { panic } from "../native/panic.native"
+import { wrapRawArray } from "../native/wrapRawArray.native"
 
 
 export const $$: api.CparseFilePath = ($) => {
