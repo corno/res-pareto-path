@@ -16,7 +16,7 @@ import {
     optional,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
-import { string, reference, externalReference, number, boolean } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, externalDefinitionReference, constructor } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 
 import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 const d = pr.wrapRawDictionary
