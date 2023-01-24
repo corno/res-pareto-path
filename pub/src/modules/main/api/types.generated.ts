@@ -12,10 +12,10 @@ export type TParseFilePathData = {
     readonly 'pathSeparator': string
 }
 
-export type FBasename = ($: mcommon.TString) => mcommon.TString
+export type FBasename = ($: mcommon.TString,) => mcommon.TString
 
-export type FConvertWindowsPathToPosixPath = ($: mcommon.TString) => mcommon.TString
+export type FConvertWindowsPathToPosixPath = ($: mcommon.TString,) => mcommon.TString
 
-export type FDirname = ($: mcommon.TString) => mcommon.TString
+export type FDirname = ($: mcommon.TString,) => mcommon.TString
 
-export type FParseFilePath = ($: TParseFilePathData) => TParsedFilePath
+export type FParseFilePath = ($: TParseFilePathData,) => TParsedFilePath

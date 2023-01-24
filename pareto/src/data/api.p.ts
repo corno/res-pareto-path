@@ -44,26 +44,11 @@ export const $: mmoduleDefinition.TModuleDefinition = {
 
         },
         'functions': d({
-            "ConvertWindowsPathToPosixPath": {
-                'data':  externalTypeReference("common", "String"),
-                'return value': externalTypeReference("common", "String"),
-            },
-            "Basename": {
-                'data':  externalTypeReference("common", "String"),
-                'return value': externalTypeReference("common", "String"),
-            },
-            "Dirname": {
-                'data':  externalTypeReference("common", "String"),
-                'return value': externalTypeReference("common", "String"),
-            },
-            "ParseFilePath": {
-                'data':  typeReference("ParseFilePathData"),
-                'return value': typeReference("ParsedFilePath"),
-            },
+            "ConvertWindowsPathToPosixPath": _function( externalTypeReference("common", "String"),externalTypeReference("common", "String")),
+            "Basename":_function( externalTypeReference("common", "String"),externalTypeReference("common", "String")),
+            "Dirname":_function( externalTypeReference("common", "String"),externalTypeReference("common", "String")),
+            "ParseFilePath": _function( typeReference("ParseFilePathData"),typeReference("ParsedFilePath")),
         }),
-        'callbacks': d({
-        }),
-        'pipes': d({}),
     },
     'api': {
         'imports': d({
@@ -71,27 +56,27 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         }),
         'algorithms': d({
             "convertWindowsPathToPosixPath": {
-                'definition': ['function', {
+                'definition': {
                     'function': "ConvertWindowsPathToPosixPath"
-                }],
+                },
                 'type': ['reference', null],
             },
             "basename": {
-                'definition': ['function', {
+                'definition': {
                     'function': "Basename"
-                }],
+                },
                 'type': ['reference', null],
             },
             "dirname": {
-                'definition': ['function', {
+                'definition': {
                     'function': "Dirname"
-                }],
+                },
                 'type': ['reference', null],
             },
             "parseFilePath": {
-                'definition': ['function', {
+                'definition': {
                     'function': "ParseFilePath"
-                }],
+                },
                 'type': ['reference', null],
             },
         })
