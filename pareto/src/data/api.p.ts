@@ -29,26 +29,23 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             // "main": "glo-pareto-main",
         }),
         'parameters': d({}),
-        'namespace': {
-            'types': types({
-                "ParseFilePathData": group({
-                    "filePath": member(str()),
-                    "pathSeparator": member(str()),
-                }),
-                "ParsedFilePath": group({
-                    "directoryPath": member(array(str())),
-                    "baseName": member(str()),
-                    "extension": member(optional(str())),
-                })
+        'types': types({
+            "ParseFilePathData": group({
+                "filePath": member(str()),
+                "pathSeparator": member(str()),
             }),
-            'interfaces': d({}),
-
-        },
+            "ParsedFilePath": group({
+                "directoryPath": member(array(str())),
+                "baseName": member(str()),
+                "extension": member(optional(str())),
+            })
+        }),
+        'interfaces': d({}),
         'functions': d({
-            "ConvertWindowsPathToPosixPath": _function( externalTypeReference("common", "String"),externalTypeReference("common", "String")),
-            "Basename":_function( externalTypeReference("common", "String"),externalTypeReference("common", "String")),
-            "Dirname":_function( externalTypeReference("common", "String"),externalTypeReference("common", "String")),
-            "ParseFilePath": _function( typeReference("ParseFilePathData"),typeReference("ParsedFilePath")),
+            "ConvertWindowsPathToPosixPath": _function(externalTypeReference("common", "String"), externalTypeReference("common", "String")),
+            "Basename": _function(externalTypeReference("common", "String"), externalTypeReference("common", "String")),
+            "Dirname": _function(externalTypeReference("common", "String"), externalTypeReference("common", "String")),
+            "ParseFilePath": _function(typeReference("ParseFilePathData"), typeReference("ParsedFilePath")),
         }),
     },
     'api': {

@@ -1,16 +1,12 @@
 import * as pt from 'pareto-core-types'
+
+import * as t from './types.generated'
+
 import * as mcommon from "glo-pareto-common"
 
-export type TParsedFilePath = {
-    readonly 'baseName': string
-    readonly 'directoryPath': pt.Array<string>
-    readonly 'extension': null | string
-}
+export type TParsedFilePath = t.UParsedFilePath
 
-export type TParseFilePathData = {
-    readonly 'filePath': string
-    readonly 'pathSeparator': string
-}
+export type TParseFilePathData = t.UParseFilePathData
 
 export type FBasename = ($: mcommon.TString,) => mcommon.TString
 
