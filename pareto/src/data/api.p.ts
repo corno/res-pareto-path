@@ -29,6 +29,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             // "main": "glo-pareto-main",
         }),
         'parameters': d({}),
+        'templates': d({}),
         'types': types({
             "ParseFilePathData": group({
                 "filePath": member(str()),
