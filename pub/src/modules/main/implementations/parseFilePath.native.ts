@@ -26,14 +26,14 @@ export const $$: api.CparseFilePath = ($) => {
             }
         })(),
         baseName: basenameImp(normalizedFilePath, extWithLeadingDot),
-        extension: ((): null | string => {
+        extension: ((): api.GParsedFilePath.Pextension => {
             if (extWithLeadingDot === "") {
-                return null
+                return ['not set', {}]
             } else {
                 if (extWithLeadingDot[0] !== ".") {
                    panic(`unexpected extension format: ${extWithLeadingDot}`)
                 }
-                return extWithLeadingDot.slice(1)
+                return ['set', extWithLeadingDot.slice(1)]
             }
         })(),
     }
