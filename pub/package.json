@@ -4,7 +4,7 @@
   "license": "ISC",
   "description": "a pareto wrapper around the 'path' library of NodeJS",
   "dependencies": {
-    "glo-pareto-common": "^0.9.0",
+    "glo-pareto-common": "^0.10.0",
     "pareto-core-internals": "^0.11.0"
   },
   "devDependencies": {
@@ -20,5 +20,5 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "version": "0.0.0",
-  "content-fingerprint": "9269cbbfad96e3732c7231a4e3ad5a8c8e1660fa"
+  "content-fingerprint": "f701a8780f1e75de104cceab1378b49485eb6f7d"
 }
