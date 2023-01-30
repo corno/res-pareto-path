@@ -5,15 +5,17 @@ import {
     null_,
     nested,
     template,
-    dictionary, member, taggedUnion, types, _function, group,
+    dictionary, member, taggedUnion, types, group,
     array,
     typeReference,
     parameter,
-} from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
+    func,
+    data,
+} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
-import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
 
-import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
+import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
 
@@ -47,10 +49,10 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         }),
         'interfaces': d({}),
         'functions': d({
-            "ConvertWindowsPathToPosixPath": _function(typeReference("common", "String"), typeReference("common", "String")),
-            "Basename": _function(typeReference("common", "String"), typeReference("common", "String")),
-            "Dirname": _function(typeReference("common", "String"), typeReference("common", "String")),
-            "ParseFilePath": _function(typeReference("ParseFilePathData"), typeReference("ParsedFilePath")),
+            "ConvertWindowsPathToPosixPath": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"),false)),
+            "Basename": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"),false)),
+            "Dirname": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"),false)),
+            "ParseFilePath": func(typeReference("ParseFilePathData"), null, null, data(typeReference("ParsedFilePath"),false)),
         }),
     },
     'api': {
