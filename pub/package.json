@@ -1,8 +1,8 @@
 {
-  "name": "res-pareto-path",
   "author": "Corno",
   "license": "ISC",
   "description": "a pareto wrapper around the 'path' library of NodeJS",
+
   "dependencies": {
     "glo-pareto-common": "^0.10.0",
     "pareto-core-internals": "^0.11.0"
@@ -14,11 +14,8 @@
     "dist"
   ],
   "repository": {
-    "type": "git",
-    "url": "http://github.com/corno/res-pareto-path.git"
+    "type": "git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "version": "0.0.0",
-  "content-fingerprint": "6e8652183837aa9504c12a9d6c43a8cb0d7d7307"
+  "types": "dist/index.d.ts"
 }
