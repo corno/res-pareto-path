@@ -26,13 +26,13 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         }),
         'parameters': d({}),
         'templates': d({
-            "Optional": {
-                'parameters': d({ "Type": {}, }),
-                'type': taggedUnion({
-                    "set": parameter("Type"),
-                    "not set": group({}),
-                })
-            }
+            // "Optional": {
+            //     'parameters': d({ "Type": {}, }),
+            //     'type': taggedUnion({
+            //         "set": parameter("Type"),
+            //         "not set": group({}),
+            //     })
+            // }
         }),
         'types': types({
             "ParseFilePathData": group({
@@ -42,9 +42,9 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "ParsedFilePath": group({
                 "directoryPath": member(array(string())),
                 "baseName": member(string()),
-                "extension": member(template("Optional", {
-                    "Type": string()
-                })),
+                // "extension": member(template("Optional", {
+                //     "Type": string()
+                // })),
             })
         }),
         'interfaces': d({}),

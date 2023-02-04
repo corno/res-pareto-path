@@ -15,7 +15,7 @@ import { wrapRawArray } from "../native/wrapRawArray.native"
 
 export const $$: api.CparseFilePath = ($) => {
     const normalizedFilePath = normalize($.filePath)
-    const extWithLeadingDot = extname(normalizedFilePath)
+    // const extWithLeadingDot = extname(normalizedFilePath)
     return {
         directoryPath: (() => {
             const dirname = dirnameImp(normalizedFilePath)
@@ -25,16 +25,16 @@ export const $$: api.CparseFilePath = ($) => {
                 return wrapRawArray(dirname.split(getPosixSeparator()))
             }
         })(),
-        baseName: basenameImp(normalizedFilePath, extWithLeadingDot),
-        extension: ((): api.GParsedFilePath.Pextension => {
-            if (extWithLeadingDot === "") {
-                return ['not set', {}]
-            } else {
-                if (extWithLeadingDot[0] !== ".") {
-                   panic(`unexpected extension format: ${extWithLeadingDot}`)
-                }
-                return ['set', extWithLeadingDot.slice(1)]
-            }
-        })(),
+        baseName: basenameImp(normalizedFilePath),
+        // extension: ((): api.GParsedFilePath.Pextension => {
+        //     if (extWithLeadingDot === "") {
+        //         return ['not set', {}]
+        //     } else {
+        //         if (extWithLeadingDot[0] !== ".") {
+        //            panic(`unexpected extension format: ${extWithLeadingDot}`)
+        //         }
+        //         return ['set', extWithLeadingDot.slice(1)]
+        //     }
+        // })(),
     }
 }
