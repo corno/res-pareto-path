@@ -4,13 +4,12 @@ import {
     string,
     null_,
     nested,
-    template,
     dictionary, member, taggedUnion, types, group,
     array,
     typeReference,
-    parameter,
     func,
     data,
+    type,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
@@ -19,33 +18,21 @@ import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodule
 
 const d = pr.wrapRawDictionary
 
-export const $: mmoduleDefinition.TModuleDefinition = {
+export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': {
         'imports': d({
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({
-            // "Optional": {
-            //     'parameters': d({ "Type": {}, }),
-            //     'type': taggedUnion({
-            //         "set": parameter("Type"),
-            //         "not set": group({}),
-            //     })
-            // }
-        }),
-        'types': types({
-            "ParseFilePathData": group({
+        'types': d({
+            "ParseFilePathData": type( group({
                 "filePath": member(string()),
                 "pathSeparator": member(string()),
-            }),
-            "ParsedFilePath": group({
+            })),
+            "ParsedFilePath": type( group({
                 "directoryPath": member(array(string())),
                 "baseName": member(string()),
-                // "extension": member(template("Optional", {
-                //     "Type": string()
-                // })),
-            })
+            })),
         }),
         'interfaces': d({}),
         'functions': d({
