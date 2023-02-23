@@ -1,6 +1,6 @@
 //import * as pi from 'pareto-core-internals'
 
-import * as mapi from "../api"
+
 
 import { basenameImp } from "../native/basenameImp.native"
 import { dirnameImp } from "../native/dirnameImp.native"
@@ -13,7 +13,9 @@ import { panic } from "../native/panic.native"
 import { wrapRawArray } from "../native/wrapRawArray.native"
 
 
-export const $$: mapi.CparseFilePath = ($) => {
+import { CparseFilePath } from "../api"
+
+export const $$:CparseFilePath = ($) => {
     const normalizedFilePath = normalize($.filePath)
     // const extWithLeadingDot = extname(normalizedFilePath)
     return {

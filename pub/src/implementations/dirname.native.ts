@@ -1,8 +1,10 @@
-import * as mapi from "../api"
+
 
 import { dirnameImp } from "../native/dirnameImp.native"
 //import * as path from "path"
 
-export const $$: mapi.Cdirname = ($) => {
+import { Cdirname } from "../api"
+
+export const $$:Cdirname = ($) => {
     return dirnameImp($)
 }
