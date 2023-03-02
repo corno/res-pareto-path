@@ -22,9 +22,9 @@ export const $$:CgetTestSet = () => {
         })
     }
 
-    createTest("basename", gpub.$a.basename("../foo/.."), "..")
-    createTest("dirname 1", gpub.$a.dirname("../foo/bar/.."), "../foo/bar")
-    createTest("dirname 2", gpub.$a.dirname("../foo/bar/x"), "../foo/bar")
+    createTest("basename", gpub.$r.basename("../foo/.."), "..")
+    createTest("dirname 1", gpub.$r.dirname("../foo/bar/.."), "../foo/bar")
+    createTest("dirname 2", gpub.$r.dirname("../foo/bar/x"), "../foo/bar")
     return pa.asyncValue({
         elements: builder.getDictionary()
     })

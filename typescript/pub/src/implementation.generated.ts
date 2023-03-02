@@ -4,7 +4,7 @@ import { $$ as iconvertWindowsPathToPosixPath } from "./implementations/convertW
 import { $$ as idirname } from "./implementations/dirname.native"
 import { $$ as iparseFilePath } from "./implementations/parseFilePath.native"
 
-export const $a: API = {
+export const $r: API = {
     'basename': ibasename,
     'convertWindowsPathToPosixPath': iconvertWindowsPathToPosixPath,
     'dirname': idirname,
