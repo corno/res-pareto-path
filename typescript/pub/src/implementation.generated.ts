@@ -1,4 +1,4 @@
-import { API } from "./api"
+import { API } from "./definition/api.generated"
 import { $$ as ibasename } from "./implementations/basename.native"
 import { $$ as iconvertWindowsPathToPosixPath } from "./implementations/convertWindowsPathToPosixPath.native"
 import { $$ as idirname } from "./implementations/dirname.native"
