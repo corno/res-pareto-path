@@ -30,6 +30,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> =  {
             "baseName": member(string()),
         })),
     }),
+    'builders': d({}),
     'interfaces': d({}),
     'functions': d({
         "ConvertWindowsPathToPosixPath": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"),false)),

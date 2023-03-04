@@ -13,9 +13,9 @@ import { panic } from "../native/panic.native"
 import { wrapRawArray } from "../native/wrapRawArray.native"
 
 
-import { CparseFilePath } from "../definition/api.generated"
+import { parseFilePath } from "../definition/api.generated"
 
-export const $$:CparseFilePath = ($) => {
+export const $$: parseFilePath = ($) => {
     const normalizedFilePath = normalize($.filePath)
     // const extWithLeadingDot = extname(normalizedFilePath)
     return {

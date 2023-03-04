@@ -1,18 +1,18 @@
 import * as pt from 'pareto-core-types'
 
-import * as gthis from "./glossary"
+import * as g_this from "./glossary"
 
-export type Cbasename = gthis.FBasename
+export type basename = g_this.F.Basename
 
-export type CconvertWindowsPathToPosixPath = gthis.FConvertWindowsPathToPosixPath
+export type convertWindowsPathToPosixPath = g_this.F.ConvertWindowsPathToPosixPath
 
-export type Cdirname = gthis.FDirname
+export type dirname = g_this.F.Dirname
 
-export type CparseFilePath = gthis.FParseFilePath
+export type parseFilePath = g_this.F.ParseFilePath
 
 export type API = {
-    basename: Cbasename
-    convertWindowsPathToPosixPath: CconvertWindowsPathToPosixPath
-    dirname: Cdirname
-    parseFilePath: CparseFilePath
+    basename: basename
+    convertWindowsPathToPosixPath: convertWindowsPathToPosixPath
+    dirname: dirname
+    parseFilePath: parseFilePath
 }

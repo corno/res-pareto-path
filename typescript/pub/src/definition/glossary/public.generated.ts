@@ -1,13 +1,20 @@
 import * as pt from 'pareto-core-types'
 
-import { T   } from './types.generated'
+import { T } from './types.generated'
 
-import * as gcommon from "glo-pareto-common"
+import * as g_common from "glo-pareto-common"
 
-export type FBasename = ($: gcommon.T.String,) => gcommon.T.String
+export namespace I {}
 
-export type FConvertWindowsPathToPosixPath = ($: gcommon.T.String,) => gcommon.T.String
+export namespace B {}
 
-export type FDirname = ($: gcommon.T.String,) => gcommon.T.String
-
-export type FParseFilePath = ($: T.ParseFilePathData,) => T.ParsedFilePath
+export namespace F {
+    
+    export type Basename = ($: g_common.T.String,) => g_common.T.String
+    
+    export type ConvertWindowsPathToPosixPath = ($: g_common.T.String,) => g_common.T.String
+    
+    export type Dirname = ($: g_common.T.String,) => g_common.T.String
+    
+    export type ParseFilePath = ($: T.ParseFilePathData,) => T.ParsedFilePath
+}
