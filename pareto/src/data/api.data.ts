@@ -6,10 +6,6 @@ import * as gapi from "lib-pareto-typescript-project/dist/submodules/api"
 const d = pd.d
 
 export const $: gapi.T.API<pd.SourceLocation> = {
-    'imports': d({
-        // "main": "glo-pareto-main",
-        "this": "./glossary",
-    }),
     'algorithms': d({
         "convertWindowsPathToPosixPath": algorithm(functionReference("this", {}, "ConvertWindowsPathToPosixPath")), 
         "basename": algorithm(functionReference("this", {}, "Basename")),
