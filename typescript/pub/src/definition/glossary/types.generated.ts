@@ -10,7 +10,7 @@ export namespace T {
         
         export namespace directoryPath {
             
-            export type T = string
+            export type A = string
         }
         
         export type directoryPath = pt.Array<string>
