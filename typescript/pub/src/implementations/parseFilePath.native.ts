@@ -13,7 +13,7 @@ import { panic } from "../native/panic.native"
 import { wrapRawArray } from "../native/wrapRawArray.native"
 
 
-import { parseFilePath } from "../definition/api.generated"
+import { parseFilePath } from "../api.generated"
 
 export const $$: parseFilePath = ($) => {
     const normalizedFilePath = normalize($.filePath)
