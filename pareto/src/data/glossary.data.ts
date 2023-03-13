@@ -7,35 +7,41 @@ import {
     dictionary, member, taggedUnion, types, group,
     array,
     typeReference,
-    data,
-    func,
+    sdata,
+    sfunc,
     type,
     optional,
-    reference,
     number,
+    imp,
+    externalTypeReference,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> =  {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
+    'imports': d({
+        "common": imp({}),
+    }),
     'types': d({
-        "ParseFilePathData": type( group({
+        "ParseFilePathData": type(group({
             "filePath": member(string()),
             "pathSeparator": member(string()),
         })),
-        "ParsedFilePath": type( group({
+        "ParsedFilePath": type(group({
             "directoryPath": member(array(string())),
             "baseName": member(string()),
         })),
     }),
-    'builders': d({}),
-    'interfaces': d({}),
-    'functions': d({
-        "ConvertWindowsPathToPosixPath": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"),false)),
-        "Basename": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"),false)),
-        "Dirname": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"),false)),
-        "ParseFilePath": func(typeReference("ParseFilePathData"), null, null, data(typeReference("ParsedFilePath"),false)),
-    }),
+    'type': ['synchronous', {
+        'builders': d({}),
+        'functions': d({
+            "ConvertWindowsPathToPosixPath": sfunc(externalTypeReference("common", "String"), null, null, sdata(externalTypeReference("common", "String"))),
+            "Basename": sfunc(externalTypeReference("common", "String"), null, null, sdata(externalTypeReference("common", "String"))),
+            "Dirname": sfunc(externalTypeReference("common", "String"), null, null, sdata(externalTypeReference("common", "String"))),
+            "ParseFilePath": sfunc(typeReference("ParseFilePathData"), null, null, sdata(typeReference("ParsedFilePath"))),
+        }),
+
+    }],
 }
