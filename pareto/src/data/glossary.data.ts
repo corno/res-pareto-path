@@ -37,10 +37,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'type': ['synchronous', {
         'builders': d({}),
         'functions': d({
-            "ConvertWindowsPathToPosixPath": sfunc(externalTypeReference("common", "String"), null, null, sdata(externalTypeReference("common", "String"))),
-            "Basename": sfunc(externalTypeReference("common", "String"), null, null, sdata(externalTypeReference("common", "String"))),
-            "Dirname": sfunc(externalTypeReference("common", "String"), null, null, sdata(externalTypeReference("common", "String"))),
-            "ParseFilePath": sfunc(typeReference("ParseFilePathData"), null, null, sdata(typeReference("ParsedFilePath"))),
+            "ConvertWindowsPathToPosixPath": sfunc(sdata(externalTypeReference("common", "String")), sdata(externalTypeReference("common", "String"))),
+            "Basename": sfunc(sdata(externalTypeReference("common", "String")), sdata(externalTypeReference("common", "String"))),
+            "Dirname": sfunc(sdata(externalTypeReference("common", "String")), sdata(externalTypeReference("common", "String"))),
+            "ParseFilePath": sfunc(sdata(typeReference("ParseFilePathData")), sdata(typeReference("ParsedFilePath"))),
         }),
 
     }],

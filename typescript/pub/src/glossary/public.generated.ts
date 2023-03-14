@@ -6,13 +6,15 @@ import * as g_common from "glo-pareto-common"
 
 export namespace B {}
 
+export namespace C {}
+
 export namespace F {
     
-    export type Basename = ($: g_common.T.String,) => g_common.T.String
+    export type Basename = ($: g_common.T.String) => g_common.T.String
     
-    export type ConvertWindowsPathToPosixPath = ($: g_common.T.String,) => g_common.T.String
+    export type ConvertWindowsPathToPosixPath = ($: g_common.T.String) => g_common.T.String
     
-    export type Dirname = ($: g_common.T.String,) => g_common.T.String
+    export type Dirname = ($: g_common.T.String) => g_common.T.String
     
-    export type ParseFilePath = ($: T.ParseFilePathData,) => T.ParsedFilePath
+    export type ParseFilePath = ($: T.ParseFilePathData) => T.ParsedFilePath
 }
