@@ -1,18 +1,20 @@
 import * as pt from 'pareto-core-types'
 
 import * as g_this from "./glossary"
-
-export type basename = g_this.F.Basename
-
-export type convertWindowsPathToPosixPath = g_this.F.ConvertWindowsPathToPosixPath
-
-export type dirname = g_this.F.Dirname
-
-export type parseFilePath = g_this.F.ParseFilePath
+export namespace A {
+    
+    export type basename = g_this.SYNC.F.Basename
+    
+    export type convertWindowsPathToPosixPath = g_this.SYNC.F.ConvertWindowsPathToPosixPath
+    
+    export type dirname = g_this.SYNC.F.Dirname
+    
+    export type parseFilePath = g_this.SYNC.F.ParseFilePath
+}
 
 export type API = {
-    basename: basename
-    convertWindowsPathToPosixPath: convertWindowsPathToPosixPath
-    dirname: dirname
-    parseFilePath: parseFilePath
+    basename: A.basename
+    convertWindowsPathToPosixPath: A.convertWindowsPathToPosixPath
+    dirname: A.dirname
+    parseFilePath: A.parseFilePath
 }

@@ -4,18 +4,15 @@
 
 import { basenameImp } from "../native/basenameImp.native"
 import { dirnameImp } from "../native/dirnameImp.native"
-import { extname } from "../native/extname.native"
 import { getPosixSeparator } from "../native/getPosixSeparator.native"
 import { normalize } from "../native/normalize.native"
 
 //import * as path from "path"
-import { panic } from "../native/panic.native"
 import { wrapRawArray } from "../native/wrapRawArray.native"
 
+import { A } from "../api.generated"
 
-import { parseFilePath } from "../api.generated"
-
-export const $$: parseFilePath = ($) => {
+export const $$: A.parseFilePath = ($) => {
     const normalizedFilePath = normalize($.filePath)
     // const extWithLeadingDot = extname(normalizedFilePath)
     return {

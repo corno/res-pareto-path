@@ -3,8 +3,8 @@
 import { basenameImp } from "../native/basenameImp.native"
 //import * as path from "path"
 
-import { basename } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: basename = ($) => {
+export const $$: A.basename = ($) => {
     return basenameImp($)
 }

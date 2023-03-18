@@ -1,19 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    string,
-    null_,
-    nested,
-    dictionary, member, taggedUnion, types, group,
-    array,
-    typeReference,
-    sdata,
-    sfunc,
-    type,
-    optional,
-    number,
-    imp,
-    externalTypeReference,
+    array, data, externalTypeReference, group, imp, member, sfunction, string, type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -34,14 +22,19 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "baseName": member(string()),
         })),
     }),
-    'type': ['synchronous', {
-        'builders': d({}),
+    'asynchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
+        'functions': d({}),
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
         'functions': d({
-            "ConvertWindowsPathToPosixPath": sfunc(sdata(externalTypeReference("common", "String")), sdata(externalTypeReference("common", "String"))),
-            "Basename": sfunc(sdata(externalTypeReference("common", "String")), sdata(externalTypeReference("common", "String"))),
-            "Dirname": sfunc(sdata(externalTypeReference("common", "String")), sdata(externalTypeReference("common", "String"))),
-            "ParseFilePath": sfunc(sdata(typeReference("ParseFilePathData")), sdata(typeReference("ParsedFilePath"))),
+            "ConvertWindowsPathToPosixPath": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "String")),
+            "Basename": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "String")),
+            "Dirname": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "String")),
+            "ParseFilePath": sfunction(data(typeReference("ParseFilePathData")), typeReference("ParsedFilePath")),
         }),
-
-    }],
+    },
 }
