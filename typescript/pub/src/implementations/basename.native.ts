@@ -5,6 +5,8 @@ import { basenameImp } from "../native/basenameImp.native"
 
 import { A } from "../api.generated"
 
-export const $$: A.basename = ($) => {
-    return basenameImp($)
+export const $$: A.basename = () => {
+    return ($) => {
+        return basenameImp($)
+    }
 }

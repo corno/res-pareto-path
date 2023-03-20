@@ -6,6 +6,8 @@ import { getWin32Separator } from "../native/getWin32Separator.native"
 
 import { A } from "../api.generated"
 
-export const $$: A.convertWindowsPathToPosixPath = ($) => {
-    return $.split(getWin32Separator()).join(getPosixSeparator())
+export const $$: A.convertWindowsPathToPosixPath = () => {
+    return ($) => {
+        return $.split(getWin32Separator()).join(getPosixSeparator())
+    }
 }

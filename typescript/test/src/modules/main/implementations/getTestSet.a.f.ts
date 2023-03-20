@@ -22,9 +22,9 @@ export const $$: getTestSet = () => {
         })
     }
 
-    createTest("basename", g_pub.$r.basename("../foo/.."), "..")
-    createTest("dirname 1", g_pub.$r.dirname("../foo/bar/.."), "../foo/bar")
-    createTest("dirname 2", g_pub.$r.dirname("../foo/bar/x"), "../foo/bar")
+    createTest("basename", g_pub.$r.basename()("../foo/.."), "..")
+    createTest("dirname 1", g_pub.$r.dirname()("../foo/bar/.."), "../foo/bar")
+    createTest("dirname 2", g_pub.$r.dirname()("../foo/bar/x"), "../foo/bar")
     return pa.asyncValue({
         elements: builder.getDictionary()
     })
