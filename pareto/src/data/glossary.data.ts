@@ -24,17 +24,16 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({}),
+        'algorithms': d({}),
+        
     },
     'synchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({
-            "ConvertWindowsPathToPosixPath": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "String")),
-            "Basename": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "String")),
-            "Dirname": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "String")),
-            "ParseFilePath": sfunction(data(typeReference("ParseFilePathData")), typeReference("ParsedFilePath")),
+        'algorithms': d({
+            "ConvertWindowsPathToPosixPath": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("common", "String"))),
+            "Basename": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("common", "String"))),
+            "Dirname": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("common", "String"))),
+            "ParseFilePath": sfunction(typeReference("ParsedFilePath"), data(typeReference("ParseFilePathData"))),
         }),
     },
 }
