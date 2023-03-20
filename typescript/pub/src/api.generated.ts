@@ -14,8 +14,8 @@ export namespace A {
 }
 
 export type API = {
-    basename: A.basename
-    convertWindowsPathToPosixPath: A.convertWindowsPathToPosixPath
-    dirname: A.dirname
-    parseFilePath: A.parseFilePath
+    readonly 'basename': A.basename
+    readonly 'convertWindowsPathToPosixPath': A.convertWindowsPathToPosixPath
+    readonly 'dirname': A.dirname
+    readonly 'parseFilePath': A.parseFilePath
 }
