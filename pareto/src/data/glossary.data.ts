@@ -12,20 +12,23 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'imports': d({
         "common": imp({}),
     }),
-    'types': d({
-        "ParseFilePathData": type(group({
-            "filePath": member(string()),
-            "pathSeparator": member(string()),
-        })),
-        "ParsedFilePath": type(group({
-            "directoryPath": member(array(string())),
-            "baseName": member(string()),
-        })),
-    }),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+            "ParseFilePathData": type(group({
+                "filePath": member(string()),
+                "pathSeparator": member(string()),
+            })),
+            "ParsedFilePath": type(group({
+                "directoryPath": member(array(string())),
+                "baseName": member(string()),
+            })),
+        }),
+    },
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
-        
+
     },
     'synchronous': {
         'interfaces': d({}),
